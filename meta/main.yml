@@ -23,7 +23,7 @@ galaxy_info:
             - wheezy
             - jessie
             - stretch
-  
+
   galaxy_tags:
       - java
       - oracle
