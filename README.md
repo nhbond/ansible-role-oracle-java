@@ -9,7 +9,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: nhbond.oracle-java }
+         - { role: nhbond.oracle_java }
 
 License
 -------
