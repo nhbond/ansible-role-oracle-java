@@ -1,4 +1,4 @@
-Orace-Java
+Oracle-Java
 =========
 
 Ansible role to install the latest version of Oracle java 8.
