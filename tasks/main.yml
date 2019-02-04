@@ -1,6 +1,9 @@
 ---
     - name: Ensure the webupd8 launchpad apt repository key is present
-      tags: java
+      retries: 3
+      delay: 2
+      register: result
+      until: result is succeeded
       apt_key:
         id: EEA14886
         keyserver: keyserver.ubuntu.com
@@ -24,11 +27,13 @@
       become: yes
 
     - name: Install Oracle java
+      retries: 3
+      delay: 2
+      register: result
+      until: result is succeeded
       become: yes
-      tags: java
       apt:
         update_cache: yes
         install_recommends: yes
-        state: latest
         pkg:
           - oracle-java8-installer
