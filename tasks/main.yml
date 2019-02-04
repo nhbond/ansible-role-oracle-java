@@ -1,0 +1,34 @@
+---
+    - name: Ensure the webupd8 launchpad apt repository key is present
+      tags: java
+      apt_key:
+        id: EEA14886
+        keyserver: keyserver.ubuntu.com
+        state: present
+      become: yes
+
+    - name: Add PPA for Oracle java
+      apt_repository:
+        repo: 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main'
+        update_cache: yes
+      tags: java
+      become: yes
+
+    - name: Accept Oracle license
+      tags: java
+      debconf:
+        name: oracle-java8-installer
+        question: shared/accepted-oracle-license-v1-1
+        value: 'true'
+        vtype: select
+      become: yes
+
+    - name: Install Oracle java
+      become: yes
+      tags: java
+      apt:
+        update_cache: yes
+        install_recommends: yes
+        state: latest
+        pkg:
+          - oracle-java8-installer

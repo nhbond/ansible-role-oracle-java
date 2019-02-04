@@ -1,0 +1,38 @@
+galaxy_info:
+  role_name: oracle-java
+  author: nhbond
+  description: Oracle Java 8
+  company: Teknique Ltd.
+
+  license: MIT
+
+  min_ansible_version: 2.4
+
+  #github_branch:
+
+  platforms:
+      - name: Ubuntu
+        versions:
+            - precise
+            - trusty
+            - xenial
+            - yakkety
+            - zesty
+      - name: Debian
+        versions:
+            - wheezy
+            - jessie
+            - stretch
+  
+  galaxy_tags:
+      - java
+      - oracle
+      - development
+      - system
+      - jdk
+      - jre
+      - jvm
+      - teknique
+      - java8
+
+dependencies: []
